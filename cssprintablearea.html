@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="Keywords" content="CSS, Print, Area">
+<meta name="Description" content="CSS Printable Area">
+<meta charset="utf-8">
+<title>CSS Printable Area</title>
+<style type="text/css">
+ @media print {
+body * {
+visibility:hidden;
+}
+#printable, #printable * {
+visibility:visible;
+}
+#printable { /* aligning the printable area */
+position:absolute;
+left:40;
+top:40;
+}
+}
+</style>
+</head>
+<body>
+<table width="750px;"><tr>
+<td align="right" valign="top">
+<input type="button"
+  onClick="window.print()"
+  value="Print This Form">
+</td>
+</tr>
+</table>
+<br><br>
+<table><tr><td>
+This is <strong>NOT</strong> printable
+</td></tr><tr><td>
+<div id="printable">
+This <strong>IS</strong> printable
+</div>
+</td></tr><tr><td>
+This is <strong>NOT</strong> printable
+</td></tr></table>
+</body>
+</html>
